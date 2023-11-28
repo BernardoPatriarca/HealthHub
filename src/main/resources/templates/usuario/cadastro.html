@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="cadastro.js" defer></script>
+  <title>Cadastro</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@200;700&family=Raleway&family=Roboto:wght@100&display=swap');
+
+    .cadastro-page {
+
+      padding: 8% 0 0;
+      margin: auto;
+    }
+
+    .style {
+      position: relative;
+      z-index: 1;
+      background: #FFFFFF;
+      border-radius: 8px;
+      max-width: 360px;
+      margin: 0 auto 100px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+
+    .style input {
+      font-family: "Montserrat", sans-serif;
+      outline: 0;
+      background: #f2f2f2;
+      width: 100%;
+      border: 0;
+      border-radius: 8px;
+      margin: 0 0 15px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .style button {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      outline: 0;
+      background: #90a9c1;
+      width: 100%;
+      border: 0;
+      border-radius: 5px;
+      padding: 15px;
+      color: #FFFFFF;
+      font-size: 14px;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+
+    .style button:hover,
+    .style button:active,
+    .style button:focus {
+      background: #d8bfd8;
+    }
+
+    .style .message {
+      margin: 15px 0 0;
+      color: #b3b3b3;
+      font-size: 12px;
+    }
+
+    .style .message a {
+      color: #6C95BB;
+      text-decoration: none;
+    }
+
+    body {
+      background: linear-gradient(120deg, #6C95BB, #d8bfd8);
+      font-family: "Montserrat", sans-serif;
+      height: 100vh;
+      font-family: "Roboto", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+</head>
+
+<body>
+<div class="cadastro-page">
+  <div class="style">
+    <div class="cadastro-style">
+      <p class="text-titulo">Pagina de cadastro</p>
+      <input type="nome" placeholder="Nome" id="nome" required />
+      <input type="email" placeholder="Email" id="email" required />
+      <input type="number" placeholder="CPF" id="CPF" required />
+      <input type="password" placeholder="Senha" id="senha" required />
+      <select class="form-select" id="relacao">
+        <option value="" selected disabled>Selecione</option>
+        <option value="1">Paciente</option>
+        <option value="2">Médico(a)</option>
+      </select>
+      <label></label>
+      <button class="btn-aceitar" id="enviar">Cadastrar</button>
+      <p class="message">Ja tem uma conta? <a href="/">faça seu login</a></p>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

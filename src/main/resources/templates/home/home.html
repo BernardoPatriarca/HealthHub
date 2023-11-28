@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+          crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css" rel="stylesheet">
+  <script src="home.js" defer></script>
+  <script src="routes.js"></script>
+  <script src="perfil.js" defer></script>
+  <script src="contato.js" defer></script>
+  <script src="calendario.js" defer></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Pagina inicial</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@200;700&family=Raleway&family=Roboto:wght@100&display=swap');
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+
+    }
+
+    .side-bar {
+      width: 160px;
+      background: #1a865a;
+      height: 100vh;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul {
+      padding: 0;
+    }
+
+    nav li {
+      list-style: none;
+    }
+
+    nav li a {
+      text-decoration: none;
+      color: #fff;
+      display: block;
+      padding: 0.6rem 0.3rem;
+      font-weight: 400;
+      transition: all ease-out 250ms;
+    }
+
+    nav li a:hover {
+      color: #63deac;
+    }
+
+    .main-content {
+      margin-left: 160px;
+    }
+
+    section {
+      background-color: #f2f2f2;
+      height: 100vh;
+      margin: 0;
+      padding: 2.5rem 4rem;
+    }
+
+    section:nth-of-type(2n) {
+      background-color: #ccc;
+    }
+
+    section:last-of-type {
+      height: 90vh;
+    }
+
+    h1 {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .active {
+      color: #63deac;
+      font-weight: 600;
+    }
+
+    #about {
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      background: url('https://images.unsplash.com/photo-1535914254981-b5012eebbd15?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    #products {
+      background: #16735f;
+    }
+
+    #sobre {
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      background: url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+
+
+    ul {
+      list-style: none;
+    }
+
+    .main {
+      max-width: 75rem;
+      padding: 3em 1.5em;
+
+    }
+
+    .main__heading {
+      font-weight: 600;
+      font-size: 2.25em;
+      margin-bottom: 0.75em;
+      text-align: center;
+      color: #eceff1;
+    }
+
+    .cards {
+      position: relative;
+
+    }
+
+    .cards__inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5em;
+    }
+
+    .card {
+      --flow-space: 0.5em;
+      --hsl: var(--hue), var(--saturation), var(--lightness);
+      flex: 1 1 14rem;
+      padding: 1.5em 2em;
+      display: grid;
+      grid-template-rows: auto auto auto 1fr;
+      align-items: start;
+      gap: 1.25em;
+      color: #eceff1;
+      background-color: #2b2b2b;
+      border: 1px solid #eceff133;
+      border-radius: 15px;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+    }
+
+
+    .card__bullets li::before {
+      display: inline-block;
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
+      transform: translatey(0.25ch);
+      margin-right: 1ch;
+    }
+
+    .card__heading {
+      font-size: 1.05em;
+      font-weight: 600;
+    }
+
+    .card__price {
+      font-size: 1.75em;
+      font-weight: 700;
+    }
+
+    .flow>*+* {
+      margin-top: var(--flow-space, 1.25em);
+    }
+
+    .cta {
+      display: block;
+      align-self: end;
+      margin: 1em 0 0.5em 0;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background-color: #0f483c;
+      padding: 0.7em;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .overlay {
+      transition: 200ms clip-path ease;
+      will-change: clip-path;
+    }
+
+
+    :not(.overlay)>.card {
+      transition: 400ms background ease;
+      will-change: background;
+    }
+
+    :not(.overlay)>.card:hover {
+      --lightness: 95%;
+      background: hsla(var(--hsl), 0.1);
+    }
+
+    #servico {
+      background: #16735f;
+    }
+
+    #foot {
+      background: #105647;
+      height: 35vh;
+    }
+
+    .titulo {
+      text-align: center;
+      margin: 10;
+      padding: 10;
+      text-shadow: 0.1em 0.1em 0.2em black;
+    }
+
+    .coluna {
+      flex-direction: column;
+    }
+
+    .servicos {
+
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border-radius: 18px;
+    }
+
+    .servicos div {
+      height: 170px;
+      width: 240px;
+      display: flex;
+      margin: 30px 30px 30px 30px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: #2e2e2e;
+      border-radius: 30px;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.24), 0 7px 8px 0 rgba(0, 0, 0, 0.24);
+
+    }
+
+    .servicos span {
+      font-size: 20px;
+    }
+
+    .servicos a {
+      display: block;
+      align-self: center;
+      margin: 1em 0 0.5em 0;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    .shadow__btn {
+      padding: 10px 20px;
+      border: none;
+      font-size: 12px;
+      color: #fff;
+      border-radius: 7px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: 0.5s;
+      transition-property: box-shadow;
+    }
+
+    .shadow__btn {
+      background: rgb(22, 115, 95);
+      box-shadow: 0 0 5px rgb(22, 115, 95);
+    }
+
+    .shadow__btn:hover {
+      box-shadow: 0 0 30px rgb(22, 115, 95);
+      0 0 50px rgb(22, 115, 95);
+      0 0 50px rgb(22, 115, 95);
+      0 0 100px rgb(22, 115, 95);
+    }
+
+  .sobre {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo con opacidad del 50% */
+    border-radius: 8px;
+    max-width: 800px;
+    margin-top: 6px;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+
+  </style>
+</head>
+
+<body>
+
+<div class="side-bar">
+  <nav class="navigation">
+    <ul>
+      <li>
+        <a href="/">Home</a>
+        <a href="/calendario">Consultas</a>
+        <a href="/historico">historico</a>
+        <a href="/contato">Contato</a>
+        <a href="/edit">Perfil</a>
+        <a href="/logout">Sair</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div id="pagina">
+<div class="main-content">
+  <section id="about">
+    <h1 style="text-shadow: 0.1em 0.1em 0.2em black" class="style">BEM-VINDO AO HEALTH HUB</h1>
+  </section>
+  <section id="products">
+    <main class="main flow">
+      <h1 style="text-shadow: 0.1em 0.1em 0.2em black" class="main__heading">Planos</h1>
+      <div class="main__cards cards">
+        <div class="cards__inner">
+          <div class="cards__card card">
+            <h2 class="card__heading">Basico</h2>
+            <p class="card__price">R$ 9,00</p>
+            <ul role="list" class="card__bullets flow">
+              <li>Acesso basico e limitado em todos os serviços</li>
+              <li>Suporte via e-mail</li>
+            </ul>
+            <a href="#basic" class="card__cta cta">Assinar plano basico</a>
+          </div>
+
+          <div class="cards__card card">
+            <h2 class="card__heading">Pro</h2>
+            <p class="card__price">R$ 19.00</p>
+            <ul role="list" class="card__bullets flow">
+              <li>Acesso rapido e ilimitado a todos os servicos</li>
+              <li>atendimento prioritario via email e whatsapp</li>
+              <li>Exclusive access to live Q&A sessions</li>
+            </ul>
+            <a href="#pro" class="card__cta cta">Assinar plano Pro</a>
+          </div>
+
+          <div class="cards__card card">
+            <h2 class="card__heading">Ultimate</h2>
+            <p class="card__price">R$ 29.99</p>
+            <ul role="list" class="card__bullets flow">
+              <li>Access to all premium workouts and nutrition plans</li>
+              <li>24/7 Priority support</li>
+              <li>1-on-1 virtual coaching session every month</li>
+              <li>Exclusive content and early access to new features</li>
+            </ul>
+            <a href="#ultimate" class="card__cta cta">Assinar plano Ultimate</a>
+          </div>
+        </div>
+
+        <div class="overlay cards__inner"></div>
+      </div>
+    </main>
+  </section>
+  <section id="sobre">
+    <div class="sobre">
+            <h1  style="text-shadow: 0.1em 0.1em 0.3em #1a865a; color: #3ad998;">Resumo do HeathHub</h1>
+
+
+                <strong>Otimização de Processos:</strong>
+                <p>Reduza o tempo gasto em tarefas administrativas, permitindo que sua equipe médica concentre-se no cuidado com os pacientes.</p>
+
+                <strong>Aceleração da Manutenção de Dados:</strong>
+                <p>Experimente uma aceleração notável na entrada, atualização e recuperação de informações, contribuindo para uma gestão mais dinâmica e ágil.</p>
+
+                <strong>Banco de Dados Super Eficiente:</strong>
+                <p>Desenvolvemos nosso banco de dados com as mais recentes tecnologias, garantindo desempenho superior, confiabilidade e segurança.</p>
+
+
+            <h1  style="text-shadow: 0.1em 0.1em 0.3em #1a865a; color: #3ad998;">O Futuro da Gestão de Dados Médicos</h1>
+            <p>O HealthHub é mais do que uma solução; é uma visão para o futuro da gestão de dados médicos. Ao escolher nossa plataforma, você investe em inovação contínua, atualizações regulares e suporte excepcional.</p>
+            <p>Descubra como o MedApp pode transformar a maneira como você gerencia e interage com os dados médicos. Junte-se a nós nesta jornada para uma saúde mais eficiente, organizada e centrada no paciente.</p>
+    </div>
+  </section>
+  <section id="servico">
+
+
+    <div class="coluna">
+      <h1 class="titulo">Serviços</h1>
+      <div class="servicos">
+        <div>
+          <span>Consulta Médica</span>
+          <a class="shadow__btn" href="#ultimate">Agendar</a>
+        </div>
+        <div>
+          <span>Exames Laboratoriais</span>
+          <a class="shadow__btn" href="#ultimate">Agendar</a>
+        </div>
+        <div>
+          <span>Fisioterapia</span>
+          <a class="shadow__btn" href="#ultimate">Agendar</a>
+        </div>
+        <div>
+          <span>Odontologia</span>
+          <a class="shadow__btn" href="#ultimate">Agendar</a>
+        </div>
+      </div>
+
+      <div class="servicos">
+        <div>
+          <span>Serviços de Urgência</span>
+          <a class="shadow__btn" href="#ultimate">Agendar</a>
+        </div>
+        <div>
+          <span>Cirurgia</span>
+          <a class="shadow__btn" href="#ultimate">Agendar</a>
+        </div>
+        <div>
+          <span>Saúde Mental</span>
+          <a class="shadow__btn" href="#ultimate">Agendar</a>
+        </div>
+        <div>
+          <span>Atendimento Preventivo</span>
+          <a class="shadow__btn" href="#ultimate">Agendar</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="foot">
+
+  </section>
+</div>
+</div>
+</body>
+
+</html>

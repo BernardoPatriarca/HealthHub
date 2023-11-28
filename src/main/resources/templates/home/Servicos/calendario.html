@@ -1,0 +1,230 @@
+<style>
+#next-month, #previous-month{
+    margin: 0 10px 0 10px;
+}
+#next-month:hover{
+    cursor: pointer;
+    text-shadow: -3px 0px 3px #000;
+}
+#previous-month:hover{
+    cursor: pointer;
+    text-shadow: 3px 0px 3px #000;
+}
+.arrow{
+    color: white;
+}
+.cabecalho-calendario{
+    background: #6c95bb;
+    border-top-left-radius: 0.8em;
+    border-top-right-radius: 0.8em;
+    height: 14vh;
+
+}
+.corpo-calendario{
+    background: #fafafa;
+    border-bottom-left-radius: 0.8em;
+    border-bottom-right-radius: 0.8em;
+    height: 56.3vh;
+    padding: 30px 10px 10px 10px;
+}
+.texto-cabecalho-calendario{
+    font-size: 1.7em;
+    margin: 0;
+}
+.dia-ativo{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #627586 !important;
+    background: #ddffdd !important;
+}
+.outro-mes{
+    background: #eee !important;
+    color: #5e5e5e !important;
+}
+.ring-container{
+    display: flex;
+    width: 50%;
+}
+.ring-left, .ring-right { position: relative;
+	top: -60vh;
+}
+.ring-right {
+	top: -60vh;
+	left: calc(100% - 3.5em);
+}
+.ring-left:before,
+.ring-left:after,
+.ring-right:before,
+.ring-right:after {
+	background: #fff;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	content: "";
+	display: inline-block;
+	margin: 8px;
+	height: 32px;
+	width: 8px;
+}
+td:hover{
+    box-shadow: inset 0px 0px 0px 0px #0000;
+    cursor: pointer;
+}
+td,i{
+	caret-color: transparent;
+}
+i{
+    font-size: 1.5em;
+}
+   .dia-selecionado {
+  position: absolute;
+  top: 39px; /* Ajuste a altura conforme necessário */
+  left: 75%; /* Posiciona o número no centro do retângulo */
+  transform: translateX(-50%);
+  background-color: #3498db; /* Cor de fundo do número */
+  color: white; /* Cor do texto do número */
+  border-radius: 50%; /* Para tornar o número circular */
+  width: 30px; /* Largura do número */
+  height: 30px; /* Altura do número */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px; /* Tamanho da fonte */
+}
+
+      .barra-superior {
+    background-color: #3498db;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    position: fixed;
+    top: 30px;
+    right: 350px;
+    width: 90%;
+    max-width: 300px;
+    height: 70px; /* Definindo a altura da barra */
+}
+
+.input-container {
+        position: fixed;
+        top: 10%; /* Posição ajustada para o topo da folha */
+        left: 75%;
+        transform: translate(-50%, 0);
+        width: 750px; /* Largura padrão de uma folha A4 em pixels */
+        height: 800px; /* Altura padrão de uma folha A4 em pixels */
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .dia-com-texto {
+    background-color: green !important; /* Altera a cor de fundo para amarelo */
+}
+</style>
+
+
+
+
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="container-fluid mt-3">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="box-calendario">
+              <div class="cabecalho-calendario d-flex align-items-center justify-content-between">
+                <div id="previous-month" class="text-end"><i class="fa-solid fa-angles-left arrow"></i></div>
+                <div class="text-center">
+                  <h1 id="mes" class="texto-cabecalho-calendario"></h1>
+                  <h1 id="ano" class="texto-cabecalho-calendario">2023</h1>
+                </div>
+                <div id="next-month" class="text-start"><i class="fa-solid fa-angles-right arrow"></i></div>
+              </div>
+
+              <div class="corpo-calendario">
+                <table class="table table-bordered text-center">
+                  <thead class="table-dark">
+                  <th>Dom</th>
+                  <th>Seg</th>
+                  <th>Ter</th>
+                  <th>Qua</th>
+                  <th>Qui</th>
+                  <th>Sex</th>
+                  <th>Sáb</th>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td class="outro-mes">30</td>
+                    <td class="outro-mes">31</td>
+                    <td>01</td>
+                    <td>02</td>
+                    <td>03</td>
+                    <td>04</td>
+                    <td>05</td>
+                  </tr>
+                  <tr>
+                    <td>06</td>
+                    <td>07</td>
+                    <td class="dia-ativo">08</td>
+                    <td>09</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                  </tr>
+                  <tr>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                  </tr>
+                  <tr>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td>31</td>
+                    <td class="outro-mes">01</td>
+                    <td class="outro-mes">02</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="row">
+                <div class="ring-container">
+                  <div class="ring-left"></div>
+                </div>
+                <div class="ring-container">
+                  <div class="ring-right"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="barra-superior">
+          </div>
+          <div class="dia-selecionado" id="diasSelecionados"></div>
+          <div class="input-container">
+            <textarea class="input-field" placeholder="Digite aqui..." rows="55"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
