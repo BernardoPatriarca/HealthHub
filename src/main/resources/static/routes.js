@@ -30,6 +30,13 @@ function controleRotasGet(url){
             });
             break;
 
+            case "/paciente":
+            $.get(url,function(data){
+            $("#pagina").html(data);
+            $("#atualizar").click(salvarHistorico);
+            });
+            break;
+
             default:
             $.get(url,function(data){
             $(".container").html(data);

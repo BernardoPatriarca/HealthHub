@@ -23,6 +23,8 @@
   <script src="perfil.js" defer></script>
   <script src="contato.js" defer></script>
   <script src="calendario.js" defer></script>
+  <script src="paciente.js" defer></script>
+  <script th:if="${usuario.id_relacao == 2}" src="paciente.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <title>Pagina inicial</title>
@@ -337,7 +339,7 @@
       <li>
         <a href="/">Home</a>
         <a href="/calendario">Consultas</a>
-        <a href="/historico">historico</a>
+        <a th:if="${usuario.id_relacao == 2}" href="/paciente">historico</a>
         <a href="/contato">Contato</a>
         <a href="/edit">Perfil</a>
         <a href="/logout">Sair</a>
@@ -410,7 +412,7 @@
 
             <h1  style="text-shadow: 0.1em 0.1em 0.3em #1a865a; color: #3ad998;">O Futuro da Gestão de Dados Médicos</h1>
             <p>O HealthHub é mais do que uma solução; é uma visão para o futuro da gestão de dados médicos. Ao escolher nossa plataforma, você investe em inovação contínua, atualizações regulares e suporte excepcional.</p>
-            <p>Descubra como o MedApp pode transformar a maneira como você gerencia e interage com os dados médicos. Junte-se a nós nesta jornada para uma saúde mais eficiente, organizada e centrada no paciente.</p>
+            <p>Descubra como o HealthHub pode transformar a maneira como você gerencia e interage com os dados médicos. Junte-se a nós nesta jornada para uma saúde mais eficiente, organizada e centrada no paciente.</p>
     </div>
   </section>
   <section id="servico">
