@@ -79,17 +79,13 @@
     box-sizing: border-box;
     font-size: 14px;
    }
-
-
-  body {
-    overflow: hidden;
-    background: #16735f;
-    font-family: "Montserrat", sans-serif;
-    display: flex;
-    margin-top: 40px;
-    justify-content: center;
-    align-content: center;
-  }
+   body {
+      background: #16735f;
+      font-family: "Montserrat", sans-serif;
+      height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
 </style>
 
@@ -100,7 +96,6 @@
         <input type="email" placeholder="Email" id="email" disabled th:value="${usuario.email}" style="background: #bacac6;"/>
         <textarea placeholder="Feedback" id="feedback" rows="6"></textarea>
         <button class="btn-aceitar" id="enviar">Enviar</button>
-        <p class="message">voltar para o <a href="/Home">menu inicial</a></p>
     </div>
 </div>
 

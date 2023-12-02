@@ -37,6 +37,13 @@ function controleRotasGet(url){
             });
             break;
 
+            case "/contato":
+            $.get(url,function(data){
+            $("#pagina").html(data);
+            $("#enviar").click(salvarFeedback);
+            });
+            break;
+
             default:
             $.get(url,function(data){
             $(".container").html(data);

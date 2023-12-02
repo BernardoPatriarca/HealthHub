@@ -2,33 +2,33 @@
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-          crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.all.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css" rel="stylesheet">
-  <script src="home.js" defer></script>
-  <script src="routes.js"></script>
-  <script src="perfil.js" defer></script>
-  <script src="contato.js" defer></script>
-  <script src="calendario.js" defer></script>
-  <script src="paciente.js" defer></script>
-  <script th:if="${usuario.id_relacao == 2}" src="paciente.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="home.js" defer></script>
+    <script src="routes.js"></script>
+    <script src="perfil.js" defer></script>
+    <script src="contato.js" defer></script>
+    <script src="calendario.js" defer></script>
+    <script src="paciente.js" defer></script>
+    <script th:if="${usuario.id_relacao == 2}" src="paciente.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <title>Pagina inicial</title>
-  <style>
+    <title>Pagina inicial</title>
+    <style>
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@200;700&family=Raleway&family=Roboto:wght@100&display=swap');
 
     * {
@@ -128,8 +128,7 @@
       justify-content: center;
       align-items: center;
       height: 90vh;
-      background: url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
-      background-size: cover;
+      background: #16735f;
     }
 
 
@@ -232,7 +231,8 @@
     }
 
     #servico {
-      background: #16735f;
+      background: url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+      background-size: cover;
     }
 
     #foot {
@@ -251,8 +251,15 @@
       flex-direction: column;
     }
 
-    .servicos {
+    .center {
 
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .servicos {
+      margin-top: 60px;
       display: flex;
       align-items: center;
       justify-content: space-around;
@@ -267,15 +274,26 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: #bdbdbd;
       background: #2e2e2e;
       border-radius: 30px;
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.24), 0 7px 8px 0 rgba(0, 0, 0, 0.24);
+      transition: 0.5s;
+      transition-property: box-shadow;
+    }
+
+
+    .servicos div:hover {
+      box-shadow: 0 0 30px rgb(22, 115, 95);
+      0 0 50px rgb(22, 115, 95);
+      0 0 50px rgb(22, 115, 95);
+      0 0 100px rgb(22, 115, 95);
 
     }
 
     .servicos span {
       font-size: 20px;
+
     }
 
     .servicos a {
@@ -315,156 +333,251 @@
       0 0 100px rgb(22, 115, 95);
     }
 
-  .sobre {
-    margin-top: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo con opacidad del 50% */
-    border-radius: 8px;
-    max-width: 800px;
-    margin-top: 6px;
-    padding: 30px;
-    text-align: center;
-    color: #fff;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
+    .sobre {
+      margin-top: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Color de fondo con opacidad del 50% */
+      border-radius: 8px;
+      max-width: 800px;
+      margin-top: 6px;
+      padding: 30px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
 
+    .fim h1 {
+      color: #dbdbdb;
+      font-size: 30px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
 
+    .fim {
+      display: flex;
+      margin-top: 20px;
+      text-align: center;
+      justify-content: space-around;
+      font-size: 15px;
+    }
+
+    .redes a {
+      text-decoration: none;
+      color: #bdbdbd;
+      transition: all ease-out 250ms;
+      display: block;
+      letter-spacing: 2px;
+
+    }
+
+    .redes a:hover {
+      color: #63deac;
+    }
+
+    .contatos a {
+      text-decoration: none;
+      color: #bdbdbd;
+      transition: all ease-out 250ms;
+      display: block;
+      letter-spacing: 2px;
+
+    }
+
+    .contatos a:hover {
+      color: #63deac;
+    }
+
+    .assinaturas a {
+      text-decoration: none;
+      color: #bdbdbd;
+      transition: all ease-out 250ms;
+      display: block;
+      letter-spacing: 2px;
+
+    }
+
+    .assinaturas a:hover {
+      color: #63deac;
+    }
   </style>
 </head>
 
 <body>
 
 <div class="side-bar">
-  <nav class="navigation">
-    <ul>
-      <li>
-        <a href="/">Home</a>
-        <a href="/calendario">Consultas</a>
-        <a th:if="${usuario.id_relacao == 2}" href="/paciente">historico</a>
-        <a href="/contato">Contato</a>
-        <a href="/edit">Perfil</a>
-        <a href="/logout">Sair</a>
-      </li>
-    </ul>
-  </nav>
+    <nav class="navigation">
+        <ul>
+            <li>
+                <a href="/">Home</a>
+                <a href="/calendario">Consultas</a>
+                <a th:if="${usuario.id_relacao == 2}" href="/paciente">historico</a>
+                <a href="/contato">Contato</a>
+                <a href="/edit">Perfil</a>
+                <a href="/logout">Sair</a>
+            </li>
+        </ul>
+    </nav>
 </div>
 <div id="pagina">
-<div class="main-content">
-  <section id="about">
-    <h1 style="text-shadow: 0.1em 0.1em 0.2em black" class="style">BEM-VINDO AO HEALTH HUB</h1>
-  </section>
-  <section id="products">
-    <main class="main flow">
-      <h1 style="text-shadow: 0.1em 0.1em 0.2em black" class="main__heading">Planos</h1>
-      <div class="main__cards cards">
-        <div class="cards__inner">
-          <div class="cards__card card">
-            <h2 class="card__heading">Basico</h2>
-            <p class="card__price">R$ 9,00</p>
-            <ul role="list" class="card__bullets flow">
-              <li>Acesso basico e limitado em todos os serviços</li>
-              <li>Suporte via e-mail</li>
-            </ul>
-            <a href="#basic" class="card__cta cta">Assinar plano basico</a>
-          </div>
+    <div class="main-content">
+        <section id="about">
+            <h1 style="text-shadow: 0.1em 0.1em 0.2em black" class="style">BEM-VINDO AO HEALTH HUB</h1>
+        </section>
+        <section id="products">
+            <div class="center">
+                <main class="main flow">
+                    <h1 style="text-shadow: 0.1em 0.1em 0.2em black" class="main__heading">Planos para clínicas</h1>
+                    <div class="main__cards cards">
+                        <div class="cards__inner">
+                            <div class="cards__card card">
+                                <h2 class="card__heading">Basico</h2>
+                                <p class="card__price">R$465,00 mensal</p>
+                                <ul role="list" class="card__bullets flow">
+                                    <li>Acesso limitado ao historico</li>
+                                    <li>Suporte via e-mail</li>
+                                </ul>
+                                <a href="#basic" class="card__cta cta">Assinar plano basico</a>
+                            </div>
 
-          <div class="cards__card card">
-            <h2 class="card__heading">Pro</h2>
-            <p class="card__price">R$ 19.00</p>
-            <ul role="list" class="card__bullets flow">
-              <li>Acesso rapido e ilimitado a todos os servicos</li>
-              <li>atendimento prioritario via email e whatsapp</li>
-              <li>Exclusive access to live Q&A sessions</li>
-            </ul>
-            <a href="#pro" class="card__cta cta">Assinar plano Pro</a>
-          </div>
+                            <div class="cards__card card">
+                                <h2 class="card__heading">Pro</h2>
+                                <p class="card__price">R$582,00 mensal</p>
+                                <ul role="list" class="card__bullets flow">
+                                    <li>Acesso ilimitado ao historico</li>
+                                    <li>Acesso limitado ao calendario medico</li>
+                                    <li>Atendimento via email e whatsapp</li>
+                                </ul>
+                                <a href="#pro" class="card__cta cta">Assinar plano Pro</a>
+                            </div>
 
-          <div class="cards__card card">
-            <h2 class="card__heading">Ultimate</h2>
-            <p class="card__price">R$ 29.99</p>
-            <ul role="list" class="card__bullets flow">
-              <li>Access to all premium workouts and nutrition plans</li>
-              <li>24/7 Priority support</li>
-              <li>1-on-1 virtual coaching session every month</li>
-              <li>Exclusive content and early access to new features</li>
-            </ul>
-            <a href="#ultimate" class="card__cta cta">Assinar plano Ultimate</a>
-          </div>
-        </div>
+                            <div class="cards__card card">
+                                <h2 class="card__heading">Premium</h2>
+                                <p class="card__price">R$620,00 mensal</p>
+                                <ul role="list" class="card__bullets flow">
+                                    <li>Acesso ilimitado ao historico</li>
+                                    <li>Acesso ilimitado ao calendario medico com informaçõe detalhadas</li>
+                                    <li>Atendimento prioritario via email e whatsapp</li>
+                                    <li>Acesso ao banco de dados</li>
+                                </ul>
+                                <a href="#ultimate" class="card__cta cta">Assinar plano Premium</a>
+                            </div>
+                        </div>
 
-        <div class="overlay cards__inner"></div>
-      </div>
-    </main>
-  </section>
-  <section id="sobre">
-    <div class="sobre">
-            <h1  style="text-shadow: 0.1em 0.1em 0.3em #1a865a; color: #3ad998;">Resumo do HeathHub</h1>
+                        <div class="overlay cards__inner"></div>
+                    </div>
+                </main>
+            </div>
+        </section>
+
+        <section id="servico">
+
+
+            <div class="coluna">
+                <h1 class="titulo">Serviços</h1>
+                <div class="servicos">
+                    <div>
+                        <span>Consulta Médica</span>
+                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                    </div>
+                    <div>
+                        <span>Exames Laboratoriais</span>
+                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                    </div>
+                    <div>
+                        <span>Fisioterapia</span>
+                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                    </div>
+                    <div>
+                        <span>Odontologia</span>
+                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                    </div>
+                </div>
+
+                <div class="servicos">
+                    <div>
+                        <span>Serviços de Urgência</span>
+                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                    </div>
+                    <div>
+                        <span>Cirurgia</span>
+                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                    </div>
+                    <div>
+                        <span>Saúde Mental</span>
+                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                    </div>
+                    <div>
+                        <span>Atendimento Preventivo</span>
+                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="sobre">
+            <div class="sobre">
+                <h1 style="text-shadow: 0.1em 0.1em 0.3em #000; color: #22b495;">Resumo do HeathHub</h1>
 
 
                 <strong>Otimização de Processos:</strong>
-                <p>Reduza o tempo gasto em tarefas administrativas, permitindo que sua equipe médica concentre-se no cuidado com os pacientes.</p>
+                <p>Reduza o tempo gasto em tarefas administrativas, permitindo que sua equipe médica concentre-se no
+                    cuidado com os pacientes.</p>
 
                 <strong>Aceleração da Manutenção de Dados:</strong>
-                <p>Experimente uma aceleração notável na entrada, atualização e recuperação de informações, contribuindo para uma gestão mais dinâmica e ágil.</p>
+                <p>Experimente uma aceleração notável na entrada, atualização e recuperação de informações, contribuindo
+                    para uma gestão mais dinâmica e ágil.</p>
 
                 <strong>Banco de Dados Super Eficiente:</strong>
-                <p>Desenvolvemos nosso banco de dados com as mais recentes tecnologias, garantindo desempenho superior, confiabilidade e segurança.</p>
+                <p>Desenvolvemos nosso banco de dados com as mais recentes tecnologias, garantindo desempenho superior,
+                    confiabilidade e segurança.</p>
 
 
-            <h1  style="text-shadow: 0.1em 0.1em 0.3em #1a865a; color: #3ad998;">O Futuro da Gestão de Dados Médicos</h1>
-            <p>O HealthHub é mais do que uma solução; é uma visão para o futuro da gestão de dados médicos. Ao escolher nossa plataforma, você investe em inovação contínua, atualizações regulares e suporte excepcional.</p>
-            <p>Descubra como o HealthHub pode transformar a maneira como você gerencia e interage com os dados médicos. Junte-se a nós nesta jornada para uma saúde mais eficiente, organizada e centrada no paciente.</p>
+                <h1 style="text-shadow: 0.1em 0.1em 0.3em #000; color: #22b495;">O Futuro da Gestão de Dados
+                    Médicos</h1>
+                <p>O HealthHub é mais do que uma solução; é uma visão para o futuro da gestão de dados médicos. Ao
+                    escolher nossa plataforma, você investe em inovação contínua, atualizações regulares e suporte
+                    excepcional.</p>
+                <p>Descubra como o HealthHub pode transformar a maneira como você gerencia e interage com os dados
+                    médicos. Junte-se a nós nesta jornada para uma saúde mais eficiente, organizada e centrada no
+                    paciente.</p>
+            </div>
+        </section>
+
+        <section id="foot">
+            <div class="fim">
+
+                <div class="redes">
+                    <h1>Redes Sociais</h1>
+                    <a href="https://twitter.com/SENAInacional"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+                    <a href="https://www.instagram.com/sesisenaiiel.patobranco/"><i class="fa-brands fa-instagram"></i>
+                        Instagram</a>
+                    <a href="https://www.facebook.com/senainacional?locale=pt_BR"><i class="fa-brands fa-facebook"></i>
+                        Facebook</a>
+                    <a href="https://www.youtube.com/@senaibrasil"><i class="fa-brands fa-youtube"></i> Youtube</a>
+                    <a href="https://www.tiktok.com/@tomwillianputzel"><i class="fa-brands fa-tiktok"></i> Tik Tok</a>
+                </div>
+
+                <div class="assinaturas">
+                    <h1>Assinaturas</h1>
+                    <a href=""><i class="fa-solid fa-user-nurse"></i> Basico</a>
+                    <a href=""><i class="fa-solid fa-user-doctor"></i> Pro</a>
+                    <a href=""><i class="fa-solid fa-hospital-user"></i> Premium</a>
+                </div>
+
+                <div class="contatos">
+                    <h1>Formas De Contato</h1>
+                    <a href=""><i class="fa-solid fa-envelope"></i> E-Mail</a>
+                    <a href=""><i class="fa-solid fa-phone"></i> Telefone</a>
+                    <a href=""><i class="fa-solid fa-mobile-screen-button"></i> Celular</a>
+                    <a href=""><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+                </div>
+
+            </div>
+
+
+        </section>
     </div>
-  </section>
-  <section id="servico">
-
-
-    <div class="coluna">
-      <h1 class="titulo">Serviços</h1>
-      <div class="servicos">
-        <div>
-          <span>Consulta Médica</span>
-          <a class="shadow__btn" href="#ultimate">Agendar</a>
-        </div>
-        <div>
-          <span>Exames Laboratoriais</span>
-          <a class="shadow__btn" href="#ultimate">Agendar</a>
-        </div>
-        <div>
-          <span>Fisioterapia</span>
-          <a class="shadow__btn" href="#ultimate">Agendar</a>
-        </div>
-        <div>
-          <span>Odontologia</span>
-          <a class="shadow__btn" href="#ultimate">Agendar</a>
-        </div>
-      </div>
-
-      <div class="servicos">
-        <div>
-          <span>Serviços de Urgência</span>
-          <a class="shadow__btn" href="#ultimate">Agendar</a>
-        </div>
-        <div>
-          <span>Cirurgia</span>
-          <a class="shadow__btn" href="#ultimate">Agendar</a>
-        </div>
-        <div>
-          <span>Saúde Mental</span>
-          <a class="shadow__btn" href="#ultimate">Agendar</a>
-        </div>
-        <div>
-          <span>Atendimento Preventivo</span>
-          <a class="shadow__btn" href="#ultimate">Agendar</a>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <section id="foot">
-
-  </section>
-</div>
 </div>
 </body>
 

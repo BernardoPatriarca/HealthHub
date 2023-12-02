@@ -1,5 +1,4 @@
-
-        <style>
+<style>
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@200;700&family=Raleway&family=Roboto:wght@100&display=swap');
 
   .perfil-page {
@@ -69,22 +68,20 @@
   }
 
   body {
-     background: #16735f;
+    background: #16735f;
   }
-
-
 </style>
 
-        <div class="perfil-page">
-                <div class="style-perfil">
-                        <p class="text-titulo">Atualizar perfil</p>
-                        <input type="nome" placeholder="Nome" id="nome" disabled th:value="${usuario.nome}" style="background: #bacac6;"/>
-                        <input type="email" placeholder="Email" id="email" disabled th:value="${usuario.email}" style="background: #bacac6;"/>
-                        <input type="number" placeholder="CPF" id="CPF" disabled th:value="${usuario.CPF}" style="background: #bacac6;"/>
-                        <input type="password" placeholder="Senha" id="senhaAtual" required />
-                        <input type="password" placeholder="Nova Senha" id="novaSenha" required />
-                        <input type="password" placeholder="Confirmar Senha" id="confSenha" required />
-                        <button class="btn-aceitar" id="salvar">Atualizar</button>
-                </div>
+<div class="perfil-page">
+        <div class="style-perfil">
+                <p class="text-titulo">Atualizar perfil</p>
+                <input type="nome" placeholder="Nome" id="nome" disabled th:value="${usuario.nome}" style="background: #bacac6;" />
+                <input type="email" placeholder="Email" id="email" disabled th:value="${usuario.email}"
+                       style="background: #bacac6;" />
+                <input type="number" placeholder="CPF" id="CPF" disabled th:value="${usuario.CPF}" style="background: #bacac6;" />
+                <input type="password" placeholder="Senha" id="senhaAtual" required />
+                <input type="password" placeholder="Nova Senha" id="novaSenha" required />
+                <input type="password" placeholder="Confirmar Senha" id="confSenha" required />
+                <button class="btn-aceitar" id="salvar">Atualizar</button>
         </div>
-
+</div>

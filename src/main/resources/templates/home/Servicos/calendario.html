@@ -1,131 +1,139 @@
 <style>
 #next-month, #previous-month{
-    margin: 0 10px 0 10px;
+   margin: 0 10px 0 10px;
 }
 #next-month:hover{
-    cursor: pointer;
-    text-shadow: -3px 0px 3px #000;
+   cursor: pointer;
+   text-shadow: -3px 0px 3px #000;
 }
 #previous-month:hover{
-    cursor: pointer;
-    text-shadow: 3px 0px 3px #000;
+   cursor: pointer;
+   text-shadow: 3px 0px 3px #000;
 }
 .arrow{
-    color: white;
+   color: white;
 }
 .cabecalho-calendario{
-    background: #6c95bb;
-    border-top-left-radius: 0.8em;
-    border-top-right-radius: 0.8em;
-    height: 14vh;
+   background: #16735f;
+   border-top-left-radius: 0.8em;
+   border-top-right-radius: 0.8em;
+   height: 14vh;
 
 }
 .corpo-calendario{
-    background: #fafafa;
-    border-bottom-left-radius: 0.8em;
-    border-bottom-right-radius: 0.8em;
-    height: 56.3vh;
-    padding: 30px 10px 10px 10px;
+   background: #fafafa;
+   border-bottom-left-radius: 0.8em;
+   border-bottom-right-radius: 0.8em;
+   height: 56.3vh;
+   padding: 30px 10px 10px 10px;
 }
 .texto-cabecalho-calendario{
-    font-size: 1.7em;
-    margin: 0;
+   font-size: 1.7em;
+   margin: 0;
 }
 .dia-ativo{
-    font-size: 1.3em;
-    font-weight: bold;
-    color: #627586 !important;
-    background: #ddffdd !important;
+   font-size: 1.3em;
+   font-weight: bold;
+   color: #627586 !important;
+   background: #ddffdd !important;
 }
 .outro-mes{
-    background: #eee !important;
-    color: #5e5e5e !important;
+   background: #eee !important;
+   color: #5e5e5e !important;
 }
 .ring-container{
-    display: flex;
-    width: 50%;
+   display: flex;
+   width: 50%;
 }
 .ring-left, .ring-right { position: relative;
-	top: -60vh;
+  top: -60vh;
 }
 .ring-right {
-	top: -60vh;
-	left: calc(100% - 3.5em);
+  top: -60vh;
+  left: calc(100% - 3.5em);
 }
 .ring-left:before,
 .ring-left:after,
 .ring-right:before,
 .ring-right:after {
-	background: #fff;
-	border-radius: 4px;
-	-webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
-	box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
-	content: "";
-	display: inline-block;
-	margin: 8px;
-	height: 32px;
-	width: 8px;
+  background: #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+  box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+  content: "";
+  display: inline-block;
+  margin: 8px;
+  height: 32px;
+  width: 8px;
 }
 td:hover{
-    box-shadow: inset 0px 0px 0px 0px #0000;
-    cursor: pointer;
+   box-shadow: inset 0px 0px 0px 0px #0000;
+   cursor: pointer;
 }
 td,i{
-	caret-color: transparent;
+  caret-color: transparent;
 }
 i{
-    font-size: 1.5em;
+   font-size: 1.5em;
 }
-   .dia-selecionado {
-  position: absolute;
-  top: 39px; /* Ajuste a altura conforme necessário */
-  left: 75%; /* Posiciona o número no centro do retângulo */
-  transform: translateX(-50%);
-  background-color: #3498db; /* Cor de fundo do número */
-  color: white; /* Cor do texto do número */
-  border-radius: 50%; /* Para tornar o número circular */
-  width: 30px; /* Largura do número */
-  height: 30px; /* Altura do número */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 14px; /* Tamanho da fonte */
+  .dia-selecionado {
+ position: absolute;
+ top: 20px; /* Ajuste a altura conforme necessário */
+ left: 120%; /* Posiciona o número no centro do retângulo */
+ transform: translateX(-50%);
+ background-color: #16735f ; /* Cor de fundo do número */
+ color: white; /* Cor do texto do número */
+ border-radius: 50%; /* Para tornar o número circular */
+ width: 30px; /* Largura do número */
+ height: 30px; /* Altura do número */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: bold;
+ font-size: 14px; /* Tamanho da fonte */
 }
 
-      .barra-superior {
-    background-color: #3498db;
-    padding: 10px;
-    color: white;
-    font-weight: bold;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    position: fixed;
-    top: 30px;
-    right: 350px;
-    width: 90%;
-    max-width: 300px;
-    height: 70px; /* Definindo a altura da barra */
+     .barra-superior {
+   background-color: #16735f;
+   padding: 10px;
+   color: white;
+   font-weight: bold;
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;
+   position: fixed;
+   top: 30px;
+   right: 350px;
+   width: 90%;
+   max-width: 300px;
+   height: 70px; /* Definindo a altura da barra */
 }
 
 .input-container {
-        position: fixed;
-        top: 10%; /* Posição ajustada para o topo da folha */
-        left: 75%;
-        transform: translate(-50%, 0);
-        width: 750px; /* Largura padrão de uma folha A4 em pixels */
-        height: 800px; /* Altura padrão de uma folha A4 em pixels */
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        overflow: hidden;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-    }
-    .dia-com-texto {
-    background-color: green !important; /* Altera a cor de fundo para amarelo */
+       position: fixed;
+       top: 10%; /* Posição ajustada para o topo da folha */
+       left: 75%;
+       transform: translate(-50%, 0);
+       width: 750px; /* Largura padrão de uma folha A4 em pixels */
+       height: 800px; /* Altura padrão de uma folha A4 em pixels */
+       background-color: #fff;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       border-radius: 8px;
+       overflow: hidden;
+       padding: 20px;
+       display: flex;
+       flex-direction: column;
+   }
+   .dia-com-texto {
+   background-color: #17d187;
 }
+.container-fluid.mt-3 {
+       margin-left: 100px;
+       position: relative;
+       left: 50px;
+
+   }
+
+
 </style>
 
 

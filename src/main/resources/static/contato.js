@@ -1,15 +1,21 @@
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('enviar').addEventListener('click', function () {
-      // Obtém o valor do campo de feedback
-      var feedbackValue = document.getElementById('feedback').value;
+function salvarFeedback(){
+    let feedback = $("#feedback").val();
 
-      // Verifica se o campo de feedback não está vazio
-      if (feedbackValue.trim() !== '') {
-        // Exibe a mensagem de feedback enviado com sucesso
-        alert('Feedback enviado com sucesso');
-      } else {
-        // Caso contrário, exibe uma mensagem de erro
-        alert('Por favor, preencha o campo de feedback antes de enviar.');
-      }
-    });
-  });
+    $.ajax({
+        type: "POST",
+        url: "/contato",
+        data:{
+            feedback:feedback,
+        },
+        success: function(data){
+            if(data.sucesso){
+                alertaSucesso("Feedback enviado com sucesso");
+            }else{
+                alert(data.mensagem);
+            }
+        },
+        error: function(){
+            alert("Algo deu errado, tente novamente");
+        }
+    })
+}
