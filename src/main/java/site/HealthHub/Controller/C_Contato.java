@@ -1,6 +1,5 @@
 package site.HealthHub.Controller;
 
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import site.HealthHub.Model.M_Resposta;
 import site.HealthHub.Service.S_Contato;
-import site.HealthHub.Service.S_Paciente;
 
 @Controller
 public class C_Contato {

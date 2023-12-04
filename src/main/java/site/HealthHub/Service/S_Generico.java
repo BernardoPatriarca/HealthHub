@@ -2,6 +2,9 @@ package site.HealthHub.Service;
 
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,6 +29,31 @@ public class S_Generico {
         return cpf.matches("^\\d{11}$");
     }
 
+    public static boolean validarCNPJ(String cnpj) {
+        return cnpj.matches("^\\d{14}$");
+    }
+
+    public static boolean validarNumeroCartao(String numeroCartao) {
+        return numeroCartao.matches("^\\d{16}$");
+    }
+
+    public static boolean validarCodigoCartao(String codigoCartao) {
+        return codigoCartao.matches("^\\d{3}$");
+    }
+
+    public static boolean validarDataCartao(String dataValidade) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/yyyy");
+        dateFormat.setLenient(false);
+
+        try {
+            Date currentDate = new Date();
+            Date inputDate = dateFormat.parse(dataValidade);
+
+            return inputDate.after(currentDate);
+        } catch (ParseException e) {
+            return false;
+        }
+    }
     public static boolean validarSenha(String senha) {
         return senha.matches("^(?=.*[A-Z])(?=.*\\d)(?=.*[@*#_$%^&+=!]).{10,}$");
     }

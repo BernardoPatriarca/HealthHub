@@ -44,6 +44,19 @@ function controleRotasGet(url){
             });
             break;
 
+            case "/contrato":
+            $.get(url,function(data){
+            $("#pagina").html(data);
+            });
+            break;
+
+            case "/plano":
+            $.get(url,function(data){
+            $("#pagina").html(data);
+            $("#assinar").click(assinar);
+            });
+            break;
+
             default:
             $.get(url,function(data){
             $(".container").html(data);
