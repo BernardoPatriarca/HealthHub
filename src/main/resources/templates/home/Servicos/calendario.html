@@ -14,7 +14,7 @@
    color: white;
 }
 .cabecalho-calendario{
-   background: #16735f;
+   background: #1a865a;
    border-top-left-radius: 0.8em;
    border-top-right-radius: 0.8em;
    height: 14vh;
@@ -81,7 +81,7 @@ i{
  top: 20px; /* Ajuste a altura conforme necessário */
  left: 120%; /* Posiciona o número no centro do retângulo */
  transform: translateX(-50%);
- background-color: #16735f ; /* Cor de fundo do número */
+ background-color: #1a865a ; /* Cor de fundo do número */
  color: white; /* Cor do texto do número */
  border-radius: 50%; /* Para tornar o número circular */
  width: 30px; /* Largura do número */
@@ -94,7 +94,7 @@ i{
 }
 
      .barra-superior {
-   background-color: #16735f;
+   background-color: #1a865a;
    padding: 10px;
    color: white;
    font-weight: bold;
@@ -124,7 +124,7 @@ i{
        flex-direction: column;
    }
    .dia-com-texto {
-   background-color: #17d187;
+   background-color: #16735f !important;
 }
 .container-fluid.mt-3 {
        margin-left: 100px;
@@ -132,13 +132,26 @@ i{
        left: 50px;
 
    }
-
+   .style {
+      position: relative;
+      z-index: 1;
+      background: #FFFFFF;
+      border-radius: 8px;
+      max-width: 360px;
+      margin: 0 auto 100px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+    body {
+    background: #16735f;
+  }
 
 </style>
 
 
 
-
+<div class="style">
 <div class="container-fluid mt-3">
   <div class="row">
     <div class="col-sm-6">
@@ -235,4 +248,5 @@ i{
       </div>
     </div>
   </div>
+</div>
 </div>

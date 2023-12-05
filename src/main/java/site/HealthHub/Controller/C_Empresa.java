@@ -23,7 +23,7 @@ public class C_Empresa {
         }
     }
     @GetMapping("/plano")
-    public String getContato(HttpSession session,
+    public String getPlano(HttpSession session,
                              Model model){
         if(session.getAttribute("usuario") != null) {
             model.addAttribute("usuario", session.getAttribute("usuario"));
@@ -35,15 +35,15 @@ public class C_Empresa {
 
     @PostMapping("/plano")
     @ResponseBody
-    public M_Resposta postEnviarFeedback(@RequestParam("nome") String nome,
+    public M_Resposta postEmpresa(@RequestParam("nomeEmpresa") String nomeEmpresa,
                                          @RequestParam("CNPJ") String CNPJ,
                                          @RequestParam("nomeCartao") String nomeCartao,
                                          @RequestParam("numeroCartao") String numeroCartao,
                                          @RequestParam("codigoCartao") String codigoCartao,
-                                         @RequestParam("validadeCartao") String validadeCartao,
+                                         @RequestParam("validade") String validade,
                                          @RequestParam("id_plano") String id_plano,
                                          HttpSession session) {
 
-            return S_Empresa.insertEmpresa(nome, CNPJ, nomeCartao, numeroCartao,codigoCartao,validadeCartao,id_plano);
+            return S_Empresa.insertEmpresa(nomeEmpresa, CNPJ, nomeCartao, numeroCartao,codigoCartao,validade,id_plano);
     }
 }

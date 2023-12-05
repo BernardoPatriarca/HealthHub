@@ -5,17 +5,17 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name="cartao")
+@Table(name="empresa")
 public class M_Empresa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
+    private String nomeEmpresa;
     private long CNPJ;
     private String nomeCartao;
     private long numeroCartao;
     private long codigoCartao;
-    private LocalDate validadeCartao;
+    private LocalDate validade;
     private Long id_plano;
 
     public Long getId() {
@@ -26,12 +26,12 @@ public class M_Empresa {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeEmpresa() {
+        return nomeEmpresa;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeEmpresa(String nomeEmpresa) {
+        this.nomeEmpresa = nomeEmpresa;
     }
 
     public long getCNPJ() {
@@ -66,12 +66,12 @@ public class M_Empresa {
         this.codigoCartao = codigoCartao;
     }
 
-    public LocalDate getValidadeCartao() {
-        return validadeCartao;
+    public LocalDate getValidade() {
+        return validade;
     }
 
-    public void setValidadeCartao(LocalDate validadeCartao) {
-        this.validadeCartao = validadeCartao;
+    public void setValidade(LocalDate validade) {
+        this.validade = validade;
     }
 
     public Long getId_plano() {
@@ -81,4 +81,6 @@ public class M_Empresa {
     public void setId_plano(Long id_plano) {
         this.id_plano = id_plano;
     }
+
+
 }

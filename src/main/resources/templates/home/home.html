@@ -22,10 +22,9 @@
     <script src="perfil.js" defer></script>
     <script src="contato.js" defer></script>
     <script src="calendario.js"></script>
-    <script src="paciente.js" defer></script>
-    <script src="plano.js" defer></script>
-
-    <script th:if="${usuario.id_relacao == 2}" src="paciente.js"></script>
+    <script th:if="${usuario.id_relacao == 1}" src="consulta.js" defer></script>
+    <script th:if="${usuario.id_relacao == 3}" src="plano.js" defer></script>
+    <script th:if="${usuario.id_relacao == 2}" src="paciente.js" defer></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Pagina inicial</title>
@@ -208,11 +207,12 @@
       text-align: center;
       text-decoration: none;
       color: #fff;
-      background-color: #0f483c;
+      background-color: #105647;
       padding: 0.7em;
       border-radius: 10px;
       font-size: 1rem;
       font-weight: 600;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.2);
     }
 
     .overlay {
@@ -222,13 +222,13 @@
 
 
     :not(.overlay)>.card {
-      transition: 400ms background ease;
-      will-change: background;
+      transition: 400ms ease;
+      will-change: #fff;
     }
 
     :not(.overlay)>.card:hover {
-      --lightness: 95%;
-      background: hsla(var(--hsl), 0.1);
+      --lightness: 100%;
+      background: #0f483c;
     }
 
     #servico {
@@ -268,16 +268,16 @@
     }
 
     .servicos div {
-      height: 170px;
-      width: 240px;
+      height: 220px;
+      width: 500px;
       display: flex;
-      margin: 30px 30px 30px 30px;
+      margin: 10px 10px 10px 10px;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       color: #bdbdbd;
       background: #2e2e2e;
-      border-radius: 30px;
+      border-radius: 14px;
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.24), 0 7px 8px 0 rgba(0, 0, 0, 0.24);
       transition: 0.5s;
       transition-property: box-shadow;
@@ -336,12 +336,14 @@
 
     .sobre {
       margin-top: 20px;
-      background-color: rgba(0, 0, 0, 0.5);
-      /* Color de fondo con opacidad del 50% */
+      background: #2e2e2e;
       border-radius: 8px;
       max-width: 800px;
       margin-top: 6px;
-      padding: 30px;
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-top: 10px;
+      padding-bottom: 10px;
       text-align: center;
       color: #fff;
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -412,7 +414,7 @@
                 <a href="/">Home</a>
                 <a href="/calendario">Consultas</a>
                 <a th:if="${usuario.id_relacao == 2}" href="/paciente">Historico</a>
-                <a href="/contato">Contato</a>
+                <a th:if="${usuario.id_relacao == 1}" href="/contato">Contato</a>
                 <a href="/edit">Perfil</a>
                 <a href="/logout">Sair</a>
             </li>
@@ -437,7 +439,7 @@
                                     <li>Acesso limitado ao historico</li>
                                     <li>Suporte via e-mail</li>
                                 </ul>
-                                <a href="/contrato" class="card__cta cta">Assinar plano basico</a>
+                                <a th:if="${usuario.id_relacao == 3}" href="/plano" class="card__cta cta">Assinar plano basico</a>
                             </div>
 
                             <div class="cards__card card">
@@ -448,7 +450,7 @@
                                     <li>Acesso limitado ao calendario medico</li>
                                     <li>Atendimento via email e whatsapp</li>
                                 </ul>
-                                <a href="/contrato" class="card__cta cta">Assinar plano Pro</a>
+                                <a th:if="${usuario.id_relacao == 3}" href="/contrato" class="card__cta cta">Assinar plano Pro</a>
                             </div>
 
                             <div class="cards__card card">
@@ -458,9 +460,8 @@
                                     <li>Acesso ilimitado ao historico</li>
                                     <li>Acesso ilimitado ao calendario medico com informaçõe detalhadas</li>
                                     <li>Atendimento prioritario via email e whatsapp</li>
-                                    <li>Acesso ao banco de dados</li>
                                 </ul>
-                                <a href="/contrato" class="card__cta cta">Assinar plano Premium</a>
+                                <a th:if="${usuario.id_relacao == 3}" href="/contrato" class="card__cta cta">Assinar plano Premium</a>
                             </div>
                         </div>
 
@@ -478,38 +479,38 @@
                 <div class="servicos">
                     <div>
                         <span>Consulta Médica</span>
-                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                        <a th:if="${usuario.id_relacao == 1}" class="shadow__btn" href="/consulta">Agendar</a>
                     </div>
                     <div>
                         <span>Exames Laboratoriais</span>
-                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                        <a th:if="${usuario.id_relacao == 1}" class="shadow__btn" href="/consulta">Agendar</a>
                     </div>
                     <div>
                         <span>Fisioterapia</span>
-                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                        <a th:if="${usuario.id_relacao == 1}" class="shadow__btn" href="/consulta">Agendar</a>
                     </div>
                     <div>
                         <span>Odontologia</span>
-                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                        <a th:if="${usuario.id_relacao == 1}" class="shadow__btn" href="/consulta">Agendar</a>
                     </div>
                 </div>
 
                 <div class="servicos">
                     <div>
                         <span>Serviços de Urgência</span>
-                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                        <a th:if="${usuario.id_relacao == 1}" class="shadow__btn" href="/consulta">Agendar</a>
                     </div>
                     <div>
                         <span>Cirurgia</span>
-                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                        <a th:if="${usuario.id_relacao == 1}" class="shadow__btn" href="/consulta">Agendar</a>
                     </div>
                     <div>
                         <span>Saúde Mental</span>
-                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                        <a th:if="${usuario.id_relacao == 1}" class="shadow__btn" href="/consulta">Agendar</a>
                     </div>
                     <div>
                         <span>Atendimento Preventivo</span>
-                        <a class="shadow__btn" href="#ultimate">Agendar</a>
+                        <a th:if="${usuario.id_relacao == 1}" class="shadow__btn" href="/consulta">Agendar</a>
                     </div>
                 </div>
             </div>

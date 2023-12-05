@@ -111,8 +111,7 @@ function ativarClickCalendario(){
     });
     $('.input-field').on('input', function() {
         const dataTexto = $(this).data('date');
-        textosPorDia[dataTexto] = $(this).val();
-        // Adiciona ou remove a classe do dia conforme o texto é inserido ou removido
+        textosPorDia[dataTexto] = $(this).val()
         $('td').each(function() {
             const idDia = parseInt($(this).attr("id"));
             if (textosPorDia[idDia]) {

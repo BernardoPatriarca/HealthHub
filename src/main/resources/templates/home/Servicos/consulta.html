@@ -1,7 +1,8 @@
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@200;700&family=Raleway&family=Roboto:wght@100&display=swap');
 
-  .plano-page {
+  .consulta-page {
     width: 500px;
     padding: 3% 0 0;
     margin: auto;
@@ -61,35 +62,42 @@
     font-size: 12px;
   }
 
-
   .style .message a {
     color: #16735f;
     text-decoration: none;
   }
 
-  body {
-    background: #16735f;
-  }
+   #observacao {
+    font-family: "Montserrat", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    border-radius: 8px;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+   }
+   body {
+      background: #16735f;
+      font-family: "Montserrat", sans-serif;
+      height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
 </style>
 
-<div class="plano-page">
-    <div class="style">
-        <p class="text-titulo">Informações da empresa</p>
-        <input type="nome" placeholder="Nome" id="nome" disabled th:value="${usuario.nome}" style="background: #bacac6;"/>
-        <input type="text" placeholder="Nome da empresa" id="nomeEmpresa" required />
-        <input type="number" placeholder="CNPJ da empresa" id="CNPJ" required />
-        <p class="text-titulo">Informações de pagamento</p>
-        <input type="text" placeholder="Nome do cartão" id="nomeCartao" required />
-        <input type="numero" placeholder="Numero do cartão" id="numeroCartao" required />
-        <input type="numero" placeholder="Código do cartão" id="codigoCartao" required />
-        <input type="date" placeholder="Validade do cartão" id="validade" required />
-        <select class="form-select" id="id_plano">
-            <option value="" selected disabled>Escolha o plano que deseja assinar</option>
-            <option value="1">Plano Basico</option>
-            <option value="2">Plano Pro</option>
-            <option value="3">Plano Premium</option>
-        </select>
-        <br>
-        <button class="btn-aceitar" id="assinar">Assinar</button>
-    </div>
+<div class="consulta-page">
+  <div class="style">
+    <p class="text-titulo">Informações do paciente</p>
+    <input type="number" placeholder="Id do paciente" id="id_cadastro" disabled th:value="${usuario.id}" style="background: #bacac6;"/>
+    <input type="nome" placeholder="Nome" id="nome" disabled th:value="${usuario.nome}" style="background: #bacac6;"/>
+    <input type="number" placeholder="CPF" id="CPF" disabled th:value="${usuario.CPF}" style="background: #bacac6;"/>
+    <p class="text-titulo">Agendamento</p>
+    <input type="date" placeholder="Data da consulta" id="dataConsulta" required />
+    <textarea placeholder="Observações para a consulta" id="observacao" rows="6"></textarea>
+    <button class="btn-aceitar" id="enviar">Enviar</button>
+  </div>
 </div>

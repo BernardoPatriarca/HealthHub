@@ -16,11 +16,11 @@ public class S_Empresa {
         this.r_empresa = r_empresa;
     }
 
-    public static M_Resposta insertEmpresa(String nome, String CNPJ, String nomeCartao, String numeroCartao, String codigoCartao, String validadeCartao, String id_plano) {
+    public static M_Resposta insertEmpresa(String nomeEmpresa, String CNPJ, String nomeCartao, String numeroCartao, String codigoCartao, String validade, String id_plano) {
         boolean podeSalvar = true;
         String mensagem = "";
 
-        if (S_Generico.textoEstaVazio(nome)) {
+        if (S_Generico.textoEstaVazio(nomeEmpresa)) {
             podeSalvar = false;
             mensagem += "|Preencha o campo nome da empresa| ";
         }
@@ -40,7 +40,7 @@ public class S_Empresa {
             podeSalvar = false;
             mensagem += "|Codigo do cartao inválido| ";
         }
-        if(S_Generico.textoEstaVazio(validadeCartao) || !S_Generico.validarDataCartao(validadeCartao)){
+        if(!S_Generico.validarDataCartao(validade)){
             podeSalvar = false;
             mensagem += "|Data de vencimento do cartao inválido| ";
         }
@@ -51,12 +51,12 @@ public class S_Empresa {
 
         if (podeSalvar) {
             M_Empresa m_empresa = new M_Empresa();
-            m_empresa.setNome(nome);
+            m_empresa.setNomeEmpresa(nomeEmpresa);
             m_empresa.setNomeCartao(nomeCartao);
             m_empresa.setCNPJ(Long.parseLong(CNPJ));
             m_empresa.setNumeroCartao(Long.parseLong(numeroCartao));
             m_empresa.setCodigoCartao(Long.parseLong(codigoCartao));
-            m_empresa.setValidadeCartao(LocalDate.parse(validadeCartao));
+            m_empresa.setValidade(LocalDate.parse(validade));
             m_empresa.setId_plano(Long.parseLong(id_plano));
 
             try {

@@ -57,6 +57,13 @@ function controleRotasGet(url){
             });
             break;
 
+            case "/consulta":
+            $.get(url,function(data){
+            $("#pagina").html(data);
+            $("#enviar").click(salvarConsulta);
+            });
+            break;
+
             default:
             $.get(url,function(data){
             $(".container").html(data);
