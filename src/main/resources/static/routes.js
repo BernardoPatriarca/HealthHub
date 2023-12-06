@@ -17,19 +17,6 @@ function controleRotasGet(url){
             });
             break;
 
-            case "/calendario":
-            $.get(url,function(data){
-            $("#pagina").html(data);
-            createCalendar(new Date());
-            $("#next-month").click(function(){
-            atualizaCalendario(1);
-            });
-            $("#previous-month").click(function(){
-            atualizaCalendario(-1);
-            });
-            });
-            break;
-
             case "/paciente":
             $.get(url,function(data){
             $("#pagina").html(data);

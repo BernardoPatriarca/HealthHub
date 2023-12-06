@@ -69,38 +69,41 @@ public class S_Usuario {
         return new M_Resposta(podeSalvar,mensagem);
     }
 
-    public static M_Resposta updateUsuario(String nome,String email, String senhaAtual,
-                                           String novaSenha, String confSenha, Object usuario){
+    public static M_Resposta updateUsuario(String nome, String email, String senhaAtual,
+                                           String novaSenha, String confSenha, Object usuario) {
         boolean podeEditar = false;
         String mensagem = "";
 
         M_Usuario m_usuario = (M_Usuario) usuario;
 
-        if(senhaAtual.equals(m_usuario.getSenha())){
+        if (!novaSenha.equals(confSenha) ||
+                S_Generico.textoEstaVazio(novaSenha) ||
+                !S_Generico.validarSenha(novaSenha) ||
+                !S_Generico.validarSenha(confSenha)) {
+            podeEditar = false;
+            mensagem += "A nova senha deve ser igual à confirmação de senha, e a senha deve ser uma senha válida.";
+        } else if (senhaAtual.equals(m_usuario.getSenha())) {
             podeEditar = true;
-            if(!novaSenha.equals(confSenha) && !S_Generico.textoEstaVazio(novaSenha) && !S_Generico.validarSenha(novaSenha) && !S_Generico.validarSenha(confSenha)){
-                podeEditar = false;
-                mensagem += "A nova senha deve ser igual a confirmação de senha, e a senha deve ser uma senha valida";
-            }
+        }
 
-            if(podeEditar){
-                m_usuario.setNome(nome);
-                m_usuario.setEmail(email);
-                if(!S_Generico.textoEstaVazio(novaSenha)) {
-                    m_usuario.setSenha(novaSenha);
-                }
-                try {
-                    r_usuario.save(m_usuario);
-                    mensagem += "Perfil atualizado com sucesso";
-                }catch (DataIntegrityViolationException e){
-                    podeEditar = false;
-                    mensagem += "Falha ao tentar atualizar o cadastro: "+ e.getMessage();
-                }
+        if (podeEditar) {
+            m_usuario.setNome(nome);
+            m_usuario.setEmail(email);
+            m_usuario.setSenha(novaSenha);
+
+            try {
+                // Assuming r_usuario is an instance of a repository or service for user operations
+                r_usuario.save(m_usuario);
+                mensagem += "Perfil atualizado com sucesso.";
+            } catch (DataIntegrityViolationException e) {
+                podeEditar = false;
+                mensagem += "Falha ao tentar atualizar o cadastro: " + e.getMessage();
             }
-        }else{
+        } else {
             mensagem += "Senha inválida, o cadastro não pode ser editado!";
         }
-        return new M_Resposta(podeEditar,mensagem);
-    }
 
+        return new M_Resposta(podeEditar, mensagem);
+    }
 }
+

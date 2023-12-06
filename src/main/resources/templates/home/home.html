@@ -21,7 +21,6 @@
     <script src="routes.js"></script>
     <script src="perfil.js" defer></script>
     <script src="contato.js" defer></script>
-    <script src="calendario.js"></script>
     <script th:if="${usuario.id_relacao == 1}" src="consulta.js" defer></script>
     <script th:if="${usuario.id_relacao == 3}" src="plano.js" defer></script>
     <script th:if="${usuario.id_relacao == 2}" src="paciente.js" defer></script>
@@ -412,7 +411,7 @@
         <ul>
             <li>
                 <a href="/">Home</a>
-                <a href="/calendario">Consultas</a>
+                <a th:if="${usuario.id_relacao == 3}" href="/plano">Historico</a>
                 <a th:if="${usuario.id_relacao == 2}" href="/paciente">Historico</a>
                 <a th:if="${usuario.id_relacao == 1}" href="/contato">Contato</a>
                 <a href="/edit">Perfil</a>
